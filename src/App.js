@@ -1,28 +1,26 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import './App.css'
+import TodoList from './TodoList'
 
 class App extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      todos: [
+        {id: 0, content: 'Complete NetNinja'},
+        {id: 1, content: 'Complete Udemy'}
+      ]
+    }
+  }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className="TodoApp container">
+        <h2 className='text-center text-dark'>My React Todo List</h2>
+        <TodoList todos={this.state.todos} />
+        {/* <AddForm /> */}
       </div>
     );
   }
 }
 
-export default App;
+export default App
