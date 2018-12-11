@@ -42,7 +42,7 @@ class App extends Component {
   render() {
     return (
       <div className="TodoApp container">
-        <h2 className='text-center text-dark'>My React Todo List</h2>
+        <h2 className='text-center text-dark my-5'>My React Todo List</h2>
         <AddTodo addTodo={this.handleAddTodo} />
         <TodoList todos={this.state.todos} delete={this.handleDelete} />
       </div>
