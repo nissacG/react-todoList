@@ -14,7 +14,9 @@ class App extends Component {
       id: 2
     }
   }
+
   handleDelete = (id) => {
+    //make new array and take out todo with matching id
     let newTodos = this.state.todos.filter(todo => todo.id !== id)
     this.setState({
       todos: newTodos
@@ -22,17 +24,19 @@ class App extends Component {
   }
 
   handleAddTodo = (newTodo) => {
-    console.log(newTodo)
+    // create todo object
     let todo = {id: this.state.id, content: newTodo}
+    // make new todo list and push the new todo
     let newTodos = this.state.todos
     newTodos.push(todo)
+    // increment id count
     let newId = this.state.id
     newId++
+    // update state to display updated todos
     this.setState({
       todos: newTodos,
       id: newId
     })
-    console.log(this.state)
   }
 
   render() {
