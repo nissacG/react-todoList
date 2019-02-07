@@ -5,3 +5,7 @@ body {
 li {
   list-style: none;
 }
+
+.card-body:not(:last-child) {
+  border-bottom: 1px solid #E6E6E6;
+}
